@@ -24,5 +24,6 @@ export const fetchData = (url, onSuccess) => {
         })
         .catch((error) => {
             console.log(error)
+            alert("No more pages, you have to go back!")
         })
 }

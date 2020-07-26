@@ -41,6 +41,20 @@ export const renderAllCharacters = (data) => {
 }
 
 export const renderSingleCharacter = (data) => {
+
+    const a = (url) => {
+        const b = url.length;
+        const c = url.slice(b - 2)
+        if (c.includes('/')) {
+            const x = url.slice(b - 1)
+            return x;
+        } else {
+            return c;
+        }
+    }
+
+    a(data.location.url)
+
     const $div = $(".main");
     const $profile = `<div class="col-sm-12 col-md-6 col-lg-6">
         <div class="card single">
@@ -54,7 +68,7 @@ export const renderSingleCharacter = (data) => {
       <h4 class="card-title"><span>species: </span>${data.species}</h4>
       <h4 class="card-title"><span>type: </span>${data.type}</h4>
       <h4 class="card-title"><span>gender: </span>${data.gender}</h4>
-      <h4 class="card-title"><span>location: </span><a href="location.html?=${data.location.url}">${data.location.name}</a></h4>
+      <h4 class="card-title"><span>location: </span><a href="location.html?=${a(data.location.url)}">${data.location.name}</a></h4>
       <h4 class="card-title"><span>no. of episodes: </span><a href="episodes.html?=${data.id}">${data.episode.length}</a></h4>
       <h4 class="card-title"><span>created: </span>${new Date(data.created).getFullYear()}</h4>
       </div>
