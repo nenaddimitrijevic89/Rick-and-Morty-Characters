@@ -20,7 +20,7 @@ body {
     margin-top: 80px;
     margin-bottom: 40px;
     .card {
-        margin: 20px;
+        margin: 10px;
         .image-abs {
             position: relative;
             .abs {
@@ -112,4 +112,13 @@ body {
 
 .actBtn {
     background-color: rgb(240, 213, 178);
+}
+
+@media only screen and (max-width:992px) {
+    .location{
+        margin-top: 110px;
+    }
+    .main{
+        margin-top: 100px;
+    }
 }
